@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { routing } from './app.routes';
+
 import {
   AngularFireModule,
   FIREBASE_PROVIDERS,
@@ -11,6 +13,7 @@ import {
 } from 'angularfire2';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBRhkRB3PeM78sKNOAqvGdEPk9xXjLz5ew',
@@ -27,12 +30,14 @@ export const firebaseAuthConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    routing,
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
   providers: [],

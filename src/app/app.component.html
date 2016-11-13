@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<nav>
+  <a routerLink="/">Home</a>
+  <span> &bull;
+      <a>Dashboard</a> &bull;
+      <a>Logout</a>
+  </span>
+  <span> | 
+      <a>Login</a> &bull;
+      <a>Sign up</a>
+    </span>
+</nav>
+<hr>
+<p>
+  <router-outlet></router-outlet>
+</p>
