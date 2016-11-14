@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { routing } from './app.routes';
+import { AuthModule } from './auth/auth.module';
+import { appRouting } from './app.routes';
 
 import {
   AngularFireModule,
@@ -37,8 +38,9 @@ export const firebaseAuthConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing,
-    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
+    appRouting,
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
