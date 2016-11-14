@@ -1,15 +1,15 @@
-<nav>
-  <a routerLink="/">Home</a>
-  <span> &bull;
-      <a>Dashboard</a> &bull;
-      <a>Logout</a>
-  </span>
-  <span> | 
-      <a>Login</a> &bull;
-      <a>Sign up</a>
-    </span>
-</nav>
+<a routerLink="/">NC State Science House</a>
+<span *ngIf="af.auth | async">
+    <a routerLink="/dashboard">Dashboard</a>
+    <a (click)="logout()" routerLink="">Logout</a>
+</span>
+<span *ngIf="!(af.auth | async)">
+    <a routerLink="/login">Login</a> 
+    <a routerLink="/signup">Sign up</a>
+</span>
+
+<router-outlet></router-outlet>
 <hr>
-<p>
-  <router-outlet></router-outlet>
-</p>
+
+<span *ngIf="af.auth | async">LOGGED IN</span>
+<span *ngIf="!(af.auth | async)">NOT LOGGED IN</span>

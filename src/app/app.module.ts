@@ -8,8 +8,6 @@ import { firebaseConfig } from './firebaseConfig';
 
 import {
   AngularFireModule,
-  FIREBASE_PROVIDERS,
-  AngularFire,
   AuthMethods,
   AuthProviders
 } from 'angularfire2';
