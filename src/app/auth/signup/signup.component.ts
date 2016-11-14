@@ -9,6 +9,8 @@ import { AngularFire } from 'angularfire2';
 })
 export class SignupComponent implements OnInit {
 
+  public error: any;
+
   constructor(private af: AngularFire, private router: Router) { }
 
   ngOnInit() {
@@ -27,8 +29,10 @@ export class SignupComponent implements OnInit {
         }).catch(
         (err) => {
           console.log(err);
-          this.router.navigate(['/login']);
+          this.router.navigate(['/signup']);
         });
+    } else {
+      this.error = 'Your form is invalid';
     }
   }
 
